@@ -279,6 +279,11 @@ mod tests {
             windows["../natives/jre/"], "natives/jre/",
             "the packaged Java resolver expects this directory layout"
         );
+        assert_eq!(
+            windows["../natives/exp-java-ice-adapter/faf-ice-adapter.jar"],
+            "natives/exp-java-ice-adapter/faf-ice-adapter.jar",
+            "the packaged Exp Java adapter expects this destination"
+        );
     }
 
     /// Valve's library is a different file on each platform, and the steam

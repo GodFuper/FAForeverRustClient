@@ -2,6 +2,7 @@
   "bundle": {
     "resources": {
       "../natives/jre/": "natives/jre/",
+      "../natives/exp-java-ice-adapter/faf-ice-adapter.jar": "natives/exp-java-ice-adapter/faf-ice-adapter.jar",
       "../vendor/steamworks/win64/steam_api64.dll": "natives/steam/steam_api64.dll",
       "../vendor/steamworks/README.md": "natives/steam/README.md"
     }

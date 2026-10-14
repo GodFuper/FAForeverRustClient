@@ -94,6 +94,21 @@ pub(crate) fn locate_bundled_helpers(app: &tauri::App) {
         }
     }
 
+    if std::env::var("FAF_EXP_JAVA_ICE_ADAPTER_JAR")
+        .unwrap_or_default()
+        .is_empty()
+    {
+        if let Ok(resource_dir) = app.path().resource_dir() {
+            let bundled_exp_adapter = resource_dir
+                .join("natives")
+                .join("exp-java-ice-adapter")
+                .join("faf-ice-adapter.jar");
+            if bundled_exp_adapter.is_file() {
+                std::env::set_var("FAF_EXP_JAVA_ICE_ADAPTER_JAR", bundled_exp_adapter);
+            }
+        }
+    }
+
     if std::env::var("FAF_JAVA_PATH")
         .unwrap_or_default()
         .is_empty()
